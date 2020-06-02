@@ -11,19 +11,20 @@ class BlueBellFinal::CLI
     puts "Look at all of our flavors!"
     
     @flavors = BlueBellFinal::BlueBellIceCream.all
+    @flavors.each.with_index(1) do |flavor, index|
+      puts "#{index}. #{flavor.name}"
+    end
   end 
 
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number fo the deal you'd like more info on or type list to see the flavors again or type 'exit':"
+      puts "Enter the number for the deal you'd like more info on or type list to see the flavors again or type 'exit':"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "More info on flavor 1"
-      when "2"
-        puts "More info on flavor 2"
-      when "list"
+      if input.to_i > 0
+        the_flavor = @flavors[input.to_i-1]
+        puts "#{the_flavor.name}"
+      elsif input == "list"
         list_flavors
       else
         puts "Not sure what you want, type 'list' or 'exit'."
