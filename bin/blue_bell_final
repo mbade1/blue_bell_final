@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require './lib/blue_bell_final'
+
+BlueBellFinal::CLI.new.call
+
