@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require './lib/blue_bell_final'
+require './lib/blue_bell_final' #keep at top to grab BlueBellFinal module - anything that needs my environment can run this one line.
 
-BlueBellFinal::CLI.new.call
-
+BlueBellFinal::CLI.new.call #everything is programmed into this object - creates a new instance of CLI class and starts the call method on it.
