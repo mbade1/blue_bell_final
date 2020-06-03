@@ -12,7 +12,7 @@ class BlueBellFinal::CLI
     
     @flavors = BlueBellFinal::BlueBellIceCream.all
     @flavors.each.with_index(1) do |flavor, index|
-      puts "#{index}. #{flavor.name}"
+      puts "#{index}. #{flavor}"
     end
   end 
 
