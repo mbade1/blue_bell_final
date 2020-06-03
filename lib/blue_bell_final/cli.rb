@@ -2,36 +2,69 @@
 class BlueBellFinal::CLI
   
   def call
-    list_flavors
+    BlueBellFinal::BlueBellIceCream.all
+    welcome
+    flavor_listings
     menu
     goodbye
   end
 
-  def list_flavors
-    puts "Look at all of our flavors!"
-    
-    @flavors = BlueBellFinal::BlueBellIceCream.all
-    @flavors.each.with_index(1) do |flavor, index|
-      puts "#{index}. #{flavor.name}"
-    end
-  end 
+  def welcome
+    puts ""
+    puts "\|/          (__)"    
+    puts "     `\------(oo)"
+    puts "       ||   (__)"
+    puts "       ||w--||     \|/"
+    puts "   \|/"
+    puts ""
+    puts "Welcome to the Blue Bell Ice Cream Flavor CLI!"
+    puts ""
+    puts "To see all of our wonderful Blue Bell Ice Cream Flavors, type 'list'."
+    puts "To end this program, type 'exit'."
+    puts ""
+  end
 
-  def menu
-    input = nil
-    while input != "exit"
-      puts "Enter the number for the flavor you'd like more info on or type 'list' to see the flavors again or type 'exit':"
-      input = gets.strip.downcase
-      if input.to_i > 0
-        the_flavor = @flavors[input.to_i-1]
-        puts "#{the_flavor.name}"
-      elsif input == "list"
-        list_flavors
-      else
-        puts "Not sure what you want, type 'list' or 'exit'."
-      end
+  def flavor_listings
+    input = gets.strip
+    if input.downcase == "list"
+      puts ""
+      flavors = BlueBellFinal::BlueBellIceCream.all
+      flavors.each.with_index(1) {|flavor, index| puts "#{index} #{flavor.name}"}
+    elsif input.downcase == "exit"
+      system "clear" or system "cls"
+      exit
+    else
+      puts ""
+      puts "Please type 'list' to see our flavors, or 'exit' to exit the program."
+      flavor_listings
     end
   end
-  
+
+  def menu
+    puts ""
+    puts "Please select the number of the flavor you wish to know more about! Otherwise, type 'exit' to leave the program."
+    input = gets.strip
+
+    if input.to_i > 0
+      flavor_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
+      puts ""
+      puts "BLUE BELL FLAVORS RULE!"
+      puts "Flavor Chosen: #{flavor_choice.name}"
+      puts "Size: #{flavor_choice.size}"
+      puts "Description: #{flavor_choice.description}"
+      puts "Nutritional URL: #{flavor_choice.nutrition}"
+    elsif input.downcase == "exit"
+      puts ""
+      puts "Take care! Thanks for stopping in!"
+      puts ""
+      system "clear" or system "cls"
+      exit
+    else
+      puts "Please try again."
+      menu
+    end
+  end
+
   def goodbye
     puts "See you tomorrow for more flavors!"
   end
