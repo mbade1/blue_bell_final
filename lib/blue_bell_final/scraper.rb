@@ -14,6 +14,7 @@ class BlueBellFinal::Scraper
       price = product_info.css("span.cat-price-number").text
       price_per_pack_or_oz = product_info.css("span.uomSalePrice").text
       BlueBellFinal::BlueBellIceCream.new(name, price, price_per_pack_or_oz)
+      binding.pry
       
     end
   end
