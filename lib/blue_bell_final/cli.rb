@@ -4,7 +4,7 @@ class BlueBellFinal::CLI
   def call
     BlueBellFinal::Scraper.scrape_our_products
     welcome
-    flavor_listings
+    product_listings
     menu
   end
 
@@ -23,34 +23,34 @@ class BlueBellFinal::CLI
     puts ""
   end
 
-  def flavor_listings
+  def product_listings
     input = gets.strip.downcase
     if input == "list"
       puts ""
-      flavors = BlueBellFinal::BlueBellIceCream.all
-      flavors.each.with_index(1) {|flavor, index| puts "#{index} #{flavor.name}"}
+      #lines 31-32 are the issue. Not collecting new instances of the BlueBellIceCream.all class method.
+      products = BlueBellFinal::BlueBellIceCream.all
+      products.each.with_index(1) {|products, index| puts "#{index} #{products.name}"}
     elsif input == "exit"
       exit
     else
       puts ""
-      puts "Please type 'list' to see our flavors, or 'exit' to exit the program."
+      puts "Please type 'list' to see our products, or 'exit' to exit the program."
       flavor_listings
     end
   end
 
   def menu
     puts ""
-    puts "Please select the number of the flavor you wish to know more about! Otherwise, type 'exit' to leave the program."
+    puts "Please select the number of the product you wish to know more about! Otherwise, type 'exit' to leave the program."
     input = gets.strip
 
     if input.to_i > 0
-      flavor_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
+      product_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
       puts ""
       puts "BLUE BELL FLAVORS RULE!"
-      puts "Flavor Chosen: #{flavor_choice.name}"
-      puts "Size: #{flavor_choice.size}"
-      puts "Description: #{flavor_choice.description}"
-      puts "Nutritional URL: #{flavor_choice.nutrition}"
+      puts "Flavor Chosen: #{product_choice.name}"
+      puts "Price: #{product_choice.price}"
+      puts "Price per ounce: #{product_choice.price_per_pack_or_oz}"
     elsif input.downcase == "exit"
       exit
     else
@@ -58,6 +58,4 @@ class BlueBellFinal::CLI
       menu
     end
   end
-
-
 end
