@@ -2,11 +2,10 @@
 class BlueBellFinal::CLI
   
   def call
-    BlueBellFinal::BlueBellIceCream.all
+    BlueBellFinal::Scraper.scrape_our_products
     welcome
     flavor_listings
     menu
-    goodbye
   end
 
   def welcome
@@ -19,19 +18,18 @@ class BlueBellFinal::CLI
     puts ""
     puts "Welcome to the Blue Bell Ice Cream Flavor CLI!"
     puts ""
-    puts "To see all of our wonderful Blue Bell Ice Cream Flavors, type 'list'."
+    puts "To see all the great flavors of Blue Bell Ice Cream that HEB offers, type 'list'."
     puts "To end this program, type 'exit'."
     puts ""
   end
 
   def flavor_listings
-    input = gets.strip
-    if input.downcase == "list"
+    input = gets.strip.downcase
+    if input == "list"
       puts ""
       flavors = BlueBellFinal::BlueBellIceCream.all
       flavors.each.with_index(1) {|flavor, index| puts "#{index} #{flavor.name}"}
-    elsif input.downcase == "exit"
-      system "clear" or system "cls"
+    elsif input == "exit"
       exit
     else
       puts ""
@@ -54,10 +52,6 @@ class BlueBellFinal::CLI
       puts "Description: #{flavor_choice.description}"
       puts "Nutritional URL: #{flavor_choice.nutrition}"
     elsif input.downcase == "exit"
-      puts ""
-      puts "Take care! Thanks for stopping in!"
-      puts ""
-      system "clear" or system "cls"
       exit
     else
       puts "Please try again."
@@ -65,8 +59,5 @@ class BlueBellFinal::CLI
     end
   end
 
-  def goodbye
-    puts "See you tomorrow for more flavors!"
-  end
 
 end
