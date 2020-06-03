@@ -5,25 +5,22 @@ require 'pry'
 
 class BlueBellFinal::Scraper
 
-
   def self.scrape_our_products
-    site = Nokogiri::HTML(open('https://www.heb.com/category/shop/frozen-food/ice-cream-treats/ice-cream/490075/490300?N=2123328484+4294957066'))
-    binding.pry
-    # product = site.css("div.responsivegriditem-middle").each do |product_info|
-      
-    #   name = product_info.css("span.responsivegriditem__title").text
-    #   price = product_info.css("span.cat-price-number").text
-    #   price_per_pack_or_oz = product_info.css("span.uomSalePrice").text
-    #   BlueBellFinal::BlueBellIceCream.new(name, price, price_per_pack_or_oz)
-      
-      
-    # end
+    doc = Nokogiri::HTML(open('https://www.bluebell.com/our-products/'))
+
+    doc.css("div.responsivegriditem-middle").each do |info|
+      name = info.css("span.responsivegriditem__title").text
+      price = info.css("span.cat-price-number").text
+      price_per_pack_or_oz = info.css("span.uomSalePrice").text
+      # BlueBellFinal::BlueBellIceCream.new(name, price, price_per_pack_or_oz)
+      binding.pry
+    end
   end
 end
 
 
 
-#Original scraper method:
+#Original scraper method:     
 # def self.scrape_our_products
 #   site = Nokogiri::HTML(open('https://www.bluebell.com/our-products/'))
 
