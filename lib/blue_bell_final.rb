@@ -1,7 +1,7 @@
 #This file acts as an environment
 require 'open-uri'
 require 'nokogiri'
-
+require 'pry'
 
 
 require_relative './blue_bell_final/version' #keep first to grab module BlueBellFinal
