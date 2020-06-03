@@ -12,14 +12,14 @@ class BlueBellFinal::CLI
     
     @flavors = BlueBellFinal::BlueBellIceCream.all
     @flavors.each.with_index(1) do |flavor, index|
-      puts "#{index}. #{flavor}"
+      puts "#{index}. #{flavor.name}"
     end
   end 
 
   def menu
     input = nil
     while input != "exit"
-      puts "Enter the number for the deal you'd like more info on or type list to see the flavors again or type 'exit':"
+      puts "Enter the number for the flavor you'd like more info on or type 'list' to see the flavors again or type 'exit':"
       input = gets.strip.downcase
       if input.to_i > 0
         the_flavor = @flavors[input.to_i-1]
