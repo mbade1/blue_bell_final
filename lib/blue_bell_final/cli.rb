@@ -60,6 +60,7 @@ class BlueBellFinal::CLI
       puts "Brand Name: #{product_choice.brand}"
       puts "Website to purchase: #{product_choice.site}"
       puts "Price: #{product_choice.price}"
+      menu
     elsif input.downcase == "exit"
       exit
     else
