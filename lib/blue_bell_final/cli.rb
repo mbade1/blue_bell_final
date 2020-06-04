@@ -45,7 +45,7 @@ class BlueBellFinal::CLI
     puts "Please select the number of the product you wish to know more about! Otherwise, type 'exit' to leave the program."
     input = gets.strip
 
-    if input.to_i > 0
+    if input.to_i > 0 && input.to_i < BlueBellFinal::BlueBellIceCream.all.length
       product_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
       puts ""
       puts "ICE CREAM RULES!!!"
