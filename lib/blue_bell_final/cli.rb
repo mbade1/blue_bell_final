@@ -35,7 +35,7 @@ class BlueBellFinal::CLI
     else
       puts ""
       puts "Please type 'list' to see our products, or 'exit' to exit the program."
-      flavor_listings
+      product_listings
     end
   end
 
@@ -49,8 +49,9 @@ class BlueBellFinal::CLI
       puts ""
       puts "BLUE BELL FLAVORS RULE!"
       puts "Flavor Chosen: #{product_choice.name}"
+      puts "Brand Name: #{product_choice.brand}"
+      puts "Website to purchase: #{product_choice.site}"
       puts "Price: #{product_choice.price}"
-      puts "Price per ounce: #{product_choice.price_per_pack_or_oz}"
     elsif input.downcase == "exit"
       exit
     else

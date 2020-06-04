@@ -2,15 +2,15 @@ class BlueBellFinal::BlueBellIceCream
 
   ##this class must initiallize with the name(title), size, description, and nutrition
     
-  attr_accessor :name, :size, :description, :nutrition
+  attr_accessor :name, :brand, :site, :price
     
   @@all = []
     
-  def initialize(name, size, description, nutrition)
+  def initialize(name, brand, site, price)
     @name = name
-    @size = size
-    @description = description
-    @nutrition = nutrition
+    @brand = brand
+    @site = site
+    @price = price
     @@all << self
   end
     
