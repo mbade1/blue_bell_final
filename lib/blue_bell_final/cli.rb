@@ -16,9 +16,9 @@ class BlueBellFinal::CLI
     puts "       ||w--||     \|/"
     puts "   \|/"
     puts ""
-    puts "Welcome to the Blue Bell Ice Cream Flavor CLI!"
+    puts "Welcome to the I SCREAM, YOU SCREAM, WE ALL SCREAM FOR ICE CREAM CLI!"
     puts ""
-    puts "To see all the great flavors of Blue Bell Ice Cream that HEB offers, type 'list'."
+    puts "To see the top 10 flavors and brands of ice cream type 'list'."
     puts "To end this program, type 'exit'."
     puts ""
   end
@@ -27,6 +27,7 @@ class BlueBellFinal::CLI
     input = gets.strip.downcase
     if input == "list"
       puts ""
+      puts "Here are the top 10 flavors and brands:"
       #lines 31-32 are the issue. Not collecting new instances of the BlueBellIceCream.all class method.
       products = BlueBellFinal::BlueBellIceCream.all
       products.each.with_index(1) {|products, index| puts "#{index} #{products.name}"}
@@ -34,7 +35,7 @@ class BlueBellFinal::CLI
       exit
     else
       puts ""
-      puts "Please type 'list' to see our products, or 'exit' to exit the program."
+      puts "Please type 'list' to see the top 10 flavors and brands of ice cream, or 'exit' to exit the program."
       product_listings
     end
   end
@@ -47,11 +48,11 @@ class BlueBellFinal::CLI
     if input.to_i > 0
       product_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
       puts ""
-      puts "BLUE BELL FLAVORS RULE!"
+      puts "ICE CREAM RULES!!!"
       puts "Flavor Chosen: #{product_choice.name}"
       puts "Brand Name: #{product_choice.brand}"
       puts "Website to purchase: #{product_choice.site}"
-      puts "Price: #{product_choice.price}"
+      puts "Price:#{product_choice.price}"
     elsif input.downcase == "exit"
       exit
     else
