@@ -1,7 +1,5 @@
 class BlueBellFinal::BlueBellIceCream
 
-  ##this class must initiallize with the name(title), size, description, and nutrition
-    
   attr_accessor :name, :brand, :site, :price
     
   @@all = []
