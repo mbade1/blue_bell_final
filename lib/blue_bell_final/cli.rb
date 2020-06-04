@@ -49,10 +49,11 @@ class BlueBellFinal::CLI
       product_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
       puts ""
       puts "ICE CREAM RULES!!!"
+      puts ""
       puts "Flavor Chosen: #{product_choice.name}"
       puts "Brand Name: #{product_choice.brand}"
       puts "Website to purchase: #{product_choice.site}"
-      puts "Price:#{product_choice.price}"
+      puts "Price: #{product_choice.price}"
     elsif input.downcase == "exit"
       exit
     else

@@ -14,7 +14,7 @@ class BlueBellFinal::Scraper
       brand = info.css('span.product-slide-brand').text
       site = info.css('span.product-slide-vendor').text
       price = info.css('div.product-slide-price').text
-      BlueBellFinal::BlueBellIceCream.new(name, brand, site, price)
+      BlueBellFinal::BlueBellIceCream.new(name, brand, site, price.strip)
     end
   end
 end
