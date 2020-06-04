@@ -10,6 +10,10 @@ Clone this repository, then:
     
 Then execute:
 
+    $ bundle install
+
+Then execute:
+
     $ ./bin/blue_bell_final
 
 ## Development
