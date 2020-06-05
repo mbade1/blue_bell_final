@@ -4,8 +4,8 @@ require 'nokogiri'
 require 'pry'
 
 
-require_relative './blue_bell_final/version' 
-require_relative './blue_bell_final/ice_cream'
-require_relative './blue_bell_final/cli'
-require_relative './blue_bell_final/scraper'
+require_relative './ice_cream_classes/version' 
+require_relative './ice_cream_classes/ice_cream'
+require_relative './ice_cream_classes/cli'
+require_relative './ice_cream_classes/scraper'
 

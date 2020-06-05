@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "blue_bell_final/version"
+require "ice_cream_classes/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "blue_bell_final"
-  spec.version       = BlueBellFinal::VERSION
+  spec.version       = IceCream::VERSION
   spec.authors       = ["'Michael Bade'"]
   spec.email         = ["'mbade314@gmail.com'"]
 
