@@ -1,4 +1,4 @@
-class BlueBellFinal::BlueBellIceCream
+class IceCream::BlueBellIceCream
 
   attr_accessor :name, :brand, :site, :price
     

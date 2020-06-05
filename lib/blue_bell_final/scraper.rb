@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-class BlueBellFinal::Scraper
+class IceCream::Scraper
   
   def self.scrape_our_products
     site = 'https://www.goodhousekeeping.com/food-products/g32366339/best-ice-cream-brands/'
@@ -13,7 +13,7 @@ class BlueBellFinal::Scraper
       brand = info.css('span.product-slide-brand').text
       site = info.css('span.product-slide-vendor').text
       price = info.css('div.product-slide-price').text
-      BlueBellFinal::BlueBellIceCream.new(name, brand, site, price.strip)
+      IceCream::BlueBellIceCream.new(name, brand, site, price.strip)
     end
   end
 end

@@ -1,7 +1,7 @@
-class BlueBellFinal::CLI
+class IceCream::CLI
   
   def call
-    BlueBellFinal::Scraper.scrape_our_products
+    IceCream::Scraper.scrape_our_products
     welcome
     product_listings
     menu
@@ -27,7 +27,7 @@ class BlueBellFinal::CLI
     if input == "list"
       puts ""
       puts "Here are the top 10 flavors:"
-      products = BlueBellFinal::BlueBellIceCream.all
+      products = IceCream::BlueBellIceCream.all
       products.each.with_index(1) {|products, index| puts "#{index} #{products.name}"}
     elsif input == "exit"
       exit
@@ -43,8 +43,8 @@ class BlueBellFinal::CLI
     puts "Please select the number of the product you wish to know more about! Otherwise, type 'exit' to leave the program."
     input = gets.strip
 
-    if input.to_i > 0 && input.to_i <= BlueBellFinal::BlueBellIceCream.all.length
-      product_choice = BlueBellFinal::BlueBellIceCream.find_by_index(input.to_i - 1)
+    if input.to_i > 0 && input.to_i <= IceCream::BlueBellIceCream.all.length
+      product_choice = IceCream::BlueBellIceCream.find_by_index(input.to_i - 1)
       puts ""
       puts "ICE CREAM RULES!!!"
       puts ""
@@ -67,4 +67,10 @@ class BlueBellFinal::CLI
       menu
     end
   end
+
+  def exit
+    puts ""
+    puts "Thank you for checking out the flavors! See you next time!"
+  end
+
 end
