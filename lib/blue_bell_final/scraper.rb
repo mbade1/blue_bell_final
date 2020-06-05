@@ -28,14 +28,8 @@ end
 
   #scraper method - ##all flavors MUST scrape for:
     #name, size (half gallon), description, and url with nutrition info.
-#source for all product_info:
 
-#name = .description__aside h4.description__title
-#size = .description__aside .description__menu li.nutrition_tabs .description__submenu a.tab__trigger 
-#description =  .description__body .description__content h5
-#nutrition = .description__aside ul.description__menu .nutrition_tabs .description__submenu .nutrition-item a.tab__trigger 
-
-  #ORIGINAL:
+    #ORIGINAL:
   
   # site = Nokogiri::HTML(open('https://www.bluebell.com/our-products/'))
 
@@ -48,3 +42,10 @@ end
   #     BlueBellFinal::BlueBellIceCream.new(name, size, description, nutrition)
   #     binding.pry
   #   end
+
+#SOURCE FOR FLAVOR INFO:
+
+#name = .description__aside h4.description__title
+#size = .description__aside .description__menu li.nutrition_tabs .description__submenu a.tab__trigger 
+#description =  .description__body .description__content h5
+#nutrition = .description__aside ul.description__menu .nutrition_tabs .description__submenu .nutrition-item a.tab__trigger 
