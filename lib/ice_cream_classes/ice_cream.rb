@@ -9,6 +9,10 @@ class IceCream::BlueBellIceCream
     @brand = brand
     @site = site
     @price = price
+    save
+  end
+  
+  def save
     @@all << self
   end
     
@@ -19,6 +23,11 @@ class IceCream::BlueBellIceCream
   def self.find_by_index(index)
     @@all[index]
   end    
+  
+  def self.alpha
+    @@all.sort_by { |flavor| flavor.name }
+  end
+  
 end
 
 

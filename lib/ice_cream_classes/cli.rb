@@ -20,15 +20,15 @@ class IceCream::CLI
     puts "To see the top 10 flavors of ice cream type 'list'."
     puts "To end this program, type 'exit'."
     puts ""
-  end
-
+  end 
+  
   def product_listings
     input = gets.strip.downcase
     if input == "list"
       puts ""
       puts "Here are the top 10 flavors:"
-      products = IceCream::BlueBellIceCream.all
-      products.each.with_index(1) {|products, index| puts "#{index} #{products.name}"}
+      products = IceCream::BlueBellIceCream.alpha
+      products.each.with_index(1) {|product, index| puts "#{index} #{product.name}"}
     elsif input == "exit"
       system "clear" or system "cls"
       exit
