@@ -23,9 +23,11 @@ class IceCream::BlueBellIceCream
   def self.find_by_index(index)
     @@all[index]
   end    
-  
+
+###LINE 30 BELOW IS CHANGED WITH .sort_by! TO MODIFY THE ORIGINAL @@all ARRAY###
+
   def self.alpha
-    @@all.sort_by { |flavor| flavor.name }
+    @@all.sort_by! { |flavor| flavor.name }
   end
   
 end

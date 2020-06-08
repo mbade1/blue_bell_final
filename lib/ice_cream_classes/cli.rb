@@ -27,8 +27,8 @@ class IceCream::CLI
     if input == "list"
       puts ""
       puts "Here are the top 10 flavors:"
-      products = IceCream::BlueBellIceCream.alpha
-      products.each.with_index(1) {|product, index| puts "#{index} #{product.name}"}
+      @products = IceCream::BlueBellIceCream.alpha
+      @products.each.with_index(1) {|product, index| puts "#{index} #{product.name}"}
     elsif input == "exit"
       system "clear" or system "cls"
       exit
@@ -44,8 +44,10 @@ class IceCream::CLI
     puts "Please select the number of the product you wish to know more about! Otherwise, type 'exit' to leave the program."
     input = gets.strip
 
+### LINE 50 IS CHANGED BELOW TO GRAB THE INSTANCE VAR, @products ###
+
     if input.to_i > 0 && input.to_i <= IceCream::BlueBellIceCream.all.length
-      product_choice = IceCream::BlueBellIceCream.find_by_index(input.to_i - 1)
+      @products = IceCream::BlueBellIceCream.find_by_index(input.to_i-1)
       puts ""
       puts "ICE CREAM RULES!!!"
       puts ""
@@ -55,10 +57,10 @@ class IceCream::CLI
       puts "   \\~~/"
       puts "    \\/"
       puts ""
-      puts "Flavor Chosen: #{product_choice.name}"
-      puts "Brand Name: #{product_choice.brand}"
-      puts "Website to purchase: #{product_choice.site}"
-      puts "Price: #{product_choice.price}"
+      puts "Flavor Chosen: #{@products.name}"
+      puts "Brand Name: #{@products.brand}"
+      puts "Website to purchase: #{@products.site}"
+      puts "Price: #{@products.price}"
       puts ""
       menu
     elsif input.downcase == "exit"
