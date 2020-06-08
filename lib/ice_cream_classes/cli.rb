@@ -15,7 +15,7 @@ class IceCream::CLI
     puts "       ||w--||     \|/"
     puts "   \|/"
     puts ""
-    puts "Welcome to the I SCREAM, YOU SCREAM, WE ALL SCREAM FOR ICE CREAM CLI!"
+    puts "Welcome to the I scream, YOU scream, WE ALL scream for ice cream CLI!"
     puts ""
     puts "To see the top 10 flavors of ice cream type 'list'."
     puts "To end this program, type 'exit'."
