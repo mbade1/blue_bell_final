@@ -24,8 +24,6 @@ class IceCream::BlueBellIceCream
     @@all[index]
   end    
 
-###LINE 30 BELOW IS CHANGED WITH .sort_by! TO MODIFY THE ORIGINAL @@all ARRAY###
-
   def self.alpha
     @@all.sort_by! { |flavor| flavor.name }
   end

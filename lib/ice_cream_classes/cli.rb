@@ -43,9 +43,6 @@ class IceCream::CLI
     puts ""
     puts "Please select the number of the product you wish to know more about! Otherwise, type 'exit' to leave the program."
     input = gets.strip
-
-### LINE 50 IS CHANGED BELOW TO GRAB THE INSTANCE VAR, @products ###
-
     if input.to_i > 0 && input.to_i <= IceCream::BlueBellIceCream.all.length
       product_choice = IceCream::BlueBellIceCream.find_by_index(input.to_i-1)
       puts ""
