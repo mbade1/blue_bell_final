@@ -23,11 +23,6 @@ class IceCream::BlueBellIceCream
   def self.find_by_index(index)
     @@all[index]
   end    
-
-  def self.alpha
-    @@all.sort_by! { |flavor| flavor.name }
-  end
-  
 end
 
 

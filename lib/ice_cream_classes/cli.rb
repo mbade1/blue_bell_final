@@ -27,7 +27,7 @@ class IceCream::CLI
     if input == "list"
       puts ""
       puts "Here are the top 10 flavors:"
-      products = IceCream::BlueBellIceCream.alpha
+      products = IceCream::BlueBellIceCream.all
       products.each.with_index(1) {|product, index| puts "#{index} #{product.name}"}
     elsif input == "exit"
       system "clear" or system "cls"
