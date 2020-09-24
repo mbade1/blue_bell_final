@@ -9,6 +9,10 @@ class IceCream::BlueBellIceCream
     @brand = brand
     @site = site
     @price = price
+    save
+  end
+  
+  def save
     @@all << self
   end
     

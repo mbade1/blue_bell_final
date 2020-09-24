@@ -15,21 +15,22 @@ class IceCream::CLI
     puts "       ||w--||     \|/"
     puts "   \|/"
     puts ""
-    puts "Welcome to the I SCREAM, YOU SCREAM, WE ALL SCREAM FOR ICE CREAM CLI!"
+    puts "Welcome to the I scream, YOU scream, WE ALL scream for ice cream CLI!"
     puts ""
     puts "To see the top 10 flavors of ice cream type 'list'."
     puts "To end this program, type 'exit'."
     puts ""
-  end
-
+  end 
+  
   def product_listings
     input = gets.strip.downcase
     if input == "list"
       puts ""
       puts "Here are the top 10 flavors:"
       products = IceCream::BlueBellIceCream.all
-      products.each.with_index(1) {|products, index| puts "#{index} #{products.name}"}
+      products.each.with_index(1) {|product, index| puts "#{index} #{product.name}"}
     elsif input == "exit"
+      system "clear" or system "cls"
       exit
     else 
       puts ""
@@ -42,9 +43,8 @@ class IceCream::CLI
     puts ""
     puts "Please select the number of the product you wish to know more about! Otherwise, type 'exit' to leave the program."
     input = gets.strip
-
     if input.to_i > 0 && input.to_i <= IceCream::BlueBellIceCream.all.length
-      product_choice = IceCream::BlueBellIceCream.find_by_index(input.to_i - 1)
+      product_choice = IceCream::BlueBellIceCream.find_by_index(input.to_i-1)
       puts ""
       puts "ICE CREAM RULES!!!"
       puts ""
@@ -61,16 +61,13 @@ class IceCream::CLI
       puts ""
       menu
     elsif input.downcase == "exit"
+      puts ""
+      puts "Thank you for checking out the flavors! See you next time!"
+      puts ""
       exit
     else
       puts "Please try again."
       menu
     end
   end
-
-  def exit
-    puts ""
-    puts "Thank you for checking out the flavors! See you next time!"
-  end
-
 end
