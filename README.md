@@ -1,6 +1,6 @@
 # BlueBellFinal
 
-This Command Line Interface lets a user access information about the top 10 ice cream flavors (and brands), according to Good Housekeeping.com.
+This Command Line Interface lets a user access information about the top 10 ice cream flavors (and brands), according to Good Housekeeping.com. For a walk-through of this project, [click here](https://www.youtube.com/watch?v=4ilClJ4bP20&feature=youtu.be&list=PLUv_cs_etiP4bXsjhDYqHEofkj7IaslYa&t=109).
 
 ## Installation
 
